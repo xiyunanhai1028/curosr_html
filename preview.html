@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>闲置好物 - 原型展示</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .preview-container {
+            width: 375px;
+            height: 812px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            margin: 20px auto;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .preview-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .preview-title {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        .preview-description {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #666;
+        }
+        .page-container {
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background: white;
+        }
+        .page-selector {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .page-btn {
+            padding: 8px 16px;
+            border: 1px solid #e5e7eb;
+            border-radius: 4px;
+            background: white;
+            cursor: pointer;
+        }
+        .page-btn.active {
+            background: #3b82f6;
+            color: white;
+            border-color: #3b82f6;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="preview-title">闲置好物 - 原型展示</div>
+    <div class="preview-description">这是一个移动端应用原型，展示了闲置物品交易平台的主要功能和界面</div>
+    
+    <div class="page-selector">
+        <button class="page-btn active" data-page="home">首页</button>
+        <button class="page-btn" data-page="product">商品详情</button>
+        <button class="page-btn" data-page="publish">发布商品</button>
+        <button class="page-btn" data-page="message">消息</button>
+        <button class="page-btn" data-page="profile">个人中心</button>
+        <button class="page-btn" data-page="order">我的订单</button>
+        <button class="page-btn" data-page="favorite">我的收藏</button>
+        <button class="page-btn" data-page="wallet">我的钱包</button>
+    </div>
+
+    <div class="preview-container">
+        <div class="page-container" id="home">
+            <!-- 首页内容 -->
+            <nav class="fixed top-0 w-full bg-white shadow-md z-50">
+                <div class="flex justify-between items-center px-4 py-3">
+                    <h1 class="text-xl font-bold text-gray-800">闲置好物</h1>
+                    <div class="flex space-x-4">
+                        <button class="p-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </button>
+                        <button class="p-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="mt-16 pb-16">
+                <!-- 分类导航 -->
+                <div class="bg-white p-4">
+                    <div class="grid grid-cols-5 gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                                </svg>
+                            </div>
+                            <span class="text-sm mt-1">服饰</span>
+                        </div>
+                        <!-- 其他分类... -->
+                    </div>
+                </div>
+
+                <!-- 今日推荐 -->
+                <div class="mt-4">
+                    <div class="px-4 flex justify-between items-center">
+                        <h2 class="text-lg font-bold">今日推荐</h2>
+                        <a href="#" class="text-sm text-gray-500">查看更多 ></a>
+                    </div>
+                    <div class="mt-3 px-4 overflow-x-auto">
+                        <div class="flex space-x-4">
+                            <div class="flex-shrink-0 w-32">
+                                <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105" alt="推荐商品" class="w-full h-32 object-cover rounded-lg">
+                                <div class="mt-2">
+                                    <h3 class="text-sm font-medium truncate">vintage连衣裙</h3>
+                                    <p class="text-xs text-red-500 mt-1">¥199</p>
+                                </div>
+                            </div>
+                            <!-- 其他推荐商品... -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 商品列表 -->
+                <div class="mt-4">
+                    <div class="px-4 flex justify-between items-center">
+                        <h2 class="text-lg font-bold">猜你喜欢</h2>
+                    </div>
+                    <div class="mt-3 p-4 grid grid-cols-2 gap-4">
+                        <div class="bg-white rounded-lg overflow-hidden shadow">
+                            <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105" alt="商品图片" class="w-full h-32 object-cover">
+                            <div class="p-3">
+                                <h3 class="text-sm font-medium">复古连衣裙</h3>
+                                <p class="text-xs text-gray-500 mt-1">9成新 | 米色</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="text-red-500 font-medium">¥199</span>
+                                    <span class="text-xs text-gray-400">上海</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 其他商品... -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 底部导航栏 -->
+            <div class="fixed bottom-0 w-full bg-white border-t">
+                <div class="flex justify-around py-2">
+                    <button class="flex flex-col items-center text-red-500" data-page="home">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                        <span class="text-xs mt-1">首页</span>
+                    </button>
+                    <!-- 其他导航按钮... -->
+                </div>
+            </div>
+        </div>
+
+        <div class="page-container hidden" id="product">
+            <!-- 商品详情页内容 -->
+            <div class="fixed top-0 left-0 right-0 bg-white z-10">
+                <div class="flex items-center p-4">
+                    <button class="p-2 back-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+                    <h2 class="flex-1 text-center text-lg font-medium">商品详情</h2>
+                </div>
+            </div>
+            <!-- 其他商品详情内容... -->
+        </div>
+
+        <!-- 其他页面内容... -->
+    </div>
+
+    <script>
+        // 页面切换功能
+        const pageButtons = document.querySelectorAll('.page-btn');
+        const pages = document.querySelectorAll('.page-container');
+
+        pageButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetPage = button.dataset.page;
+                
+                // 更新按钮状态
+                pageButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                // 显示目标页面
+                pages.forEach(page => {
+                    page.classList.add('hidden');
+                    if (page.id === targetPage) {
+                        page.classList.remove('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

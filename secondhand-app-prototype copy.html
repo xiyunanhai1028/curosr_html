@@ -1,0 +1,696 @@
+<!--
+ * @Author: cwa4341 dufeihu@cowain.cn
+ * @Date: 2025-04-10 09:11:48
+ * @LastEditors: cwa4341 dufeihu@cowain.cn
+ * @LastEditTime: 2025-04-10 09:35:42
+ * @FilePath: /cursor_ui/secondhand-app-prototype.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>闲置好物 - 原型展示</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <!-- 顶部导航 -->
+    <nav class="fixed top-0 w-full bg-white shadow-md z-50">
+        <div class="flex justify-between items-center px-4 py-3">
+            <h1 class="text-xl font-bold text-gray-800">闲置好物</h1>
+            <div class="flex space-x-4">
+                <button class="p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </button>
+                <button class="p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容区域 -->
+    <div class="mt-16 pb-16">
+        <!-- 分类导航 -->
+        <div class="bg-white p-4">
+            <div class="grid grid-cols-5 gap-4">
+                <div class="flex flex-col items-center">
+                    <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                        </svg>
+                    </div>
+                    <span class="text-sm mt-1">服饰</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <span class="text-sm mt-1">电子</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                    </div>
+                    <span class="text-sm mt-1">书籍</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                    </div>
+                    <span class="text-sm mt-1">家居</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z" />
+                        </svg>
+                    </div>
+                    <span class="text-sm mt-1">更多</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 今日推荐 -->
+        <div class="mt-4">
+            <div class="px-4 flex justify-between items-center">
+                <h2 class="text-lg font-bold">今日推荐</h2>
+                <a href="#" class="text-sm text-gray-500">查看更多 ></a>
+            </div>
+            <div class="mt-3 px-4 overflow-x-auto">
+                <div class="flex space-x-4">
+                    <div class="flex-shrink-0 w-32">
+                        <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105" alt="推荐商品" class="w-full h-32 object-cover rounded-lg">
+                        <div class="mt-2">
+                            <h3 class="text-sm font-medium truncate">vintage连衣裙</h3>
+                            <p class="text-xs text-red-500 mt-1">¥199</p>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 w-32">
+                        <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f" alt="推荐商品" class="w-full h-32 object-cover rounded-lg">
+                        <div class="mt-2">
+                            <h3 class="text-sm font-medium truncate">复古相机</h3>
+                            <p class="text-xs text-red-500 mt-1">¥899</p>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 w-32">
+                        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f" alt="推荐商品" class="w-full h-32 object-cover rounded-lg">
+                        <div class="mt-2">
+                            <h3 class="text-sm font-medium truncate">文学小说合集</h3>
+                            <p class="text-xs text-red-500 mt-1">¥68</p>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 w-32">
+                        <img src="https://images.unsplash.com/photo-1526738549149-8e07eca6c147" alt="推荐商品" class="w-full h-32 object-cover rounded-lg">
+                        <div class="mt-2">
+                            <h3 class="text-sm font-medium truncate">北欧风台灯</h3>
+                            <p class="text-xs text-red-500 mt-1">¥129</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 商品列表 -->
+        <div class="mt-4">
+            <div class="px-4 flex justify-between items-center">
+                <h2 class="text-lg font-bold">猜你喜欢</h2>
+            </div>
+            <div class="mt-3 p-4 grid grid-cols-2 gap-4">
+                <div class="bg-white rounded-lg overflow-hidden shadow">
+                    <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105" alt="商品图片" class="w-full h-32 object-cover">
+                    <div class="p-3">
+                        <h3 class="text-sm font-medium">复古连衣裙</h3>
+                        <p class="text-xs text-gray-500 mt-1">9成新 | 米色</p>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-red-500 font-medium">¥199</span>
+                            <span class="text-xs text-gray-400">上海</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg overflow-hidden shadow">
+                    <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f" alt="商品图片" class="w-full h-32 object-cover">
+                    <div class="p-3">
+                        <h3 class="text-sm font-medium">复古相机</h3>
+                        <p class="text-xs text-gray-500 mt-1">95新 | 带包装</p>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-red-500 font-medium">¥899</span>
+                            <span class="text-xs text-gray-400">北京</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 更多商品卡片 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 商品详情页 -->
+    <div class="fixed inset-0 bg-white z-50" style="display: none;" id="productDetail">
+        <!-- 返回按钮 -->
+        <div class="fixed top-0 left-0 right-0 bg-white z-10">
+            <div class="flex items-center p-4">
+                <button class="p-2 back-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <h2 class="flex-1 text-center text-lg font-medium">商品详情</h2>
+            </div>
+        </div>
+
+        <!-- 商品图片轮播 -->
+        <div class="w-full h-80">
+            <img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db" alt="商品详情图" class="w-full h-full object-cover">
+        </div>
+
+        <!-- 商品信息 -->
+        <div class="p-4 bg-white">
+            <div class="flex justify-between items-start">
+                <div>
+                    <h1 class="text-xl font-bold">iPhone 12 Pro 128G</h1>
+                    <p class="text-red-500 text-xl font-bold mt-2">¥4999</p>
+                </div>
+                <button class="p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="mt-4 flex items-center text-sm text-gray-500">
+                <span>成色：95新</span>
+                <span class="mx-4">|</span>
+                <span>浏览：1280</span>
+            </div>
+        </div>
+
+        <!-- 卖家信息 -->
+        <div class="mt-2 p-4 bg-white">
+            <div class="flex items-center">
+                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde" alt="卖家头像" class="w-12 h-12 rounded-full">
+                <div class="ml-3">
+                    <h3 class="font-medium">张三</h3>
+                    <p class="text-sm text-gray-500">上海市浦东新区</p>
+                </div>
+                <button class="ml-auto px-4 py-2 bg-gray-100 rounded-full text-sm">查看主页</button>
+            </div>
+        </div>
+
+        <!-- 商品描述 -->
+        <div class="mt-2 p-4 bg-white">
+            <h3 class="font-medium mb-2">商品描述</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+                95新iPhone 12 Pro，128G深空灰色，无维修无进水，电池健康度89%，附赠充电器和数据线，支持验机。
+            </p>
+        </div>
+
+        <!-- 底部操作栏 -->
+        <div class="fixed bottom-0 left-0 right-0 bg-white border-t p-3">
+            <div class="flex items-center space-x-4">
+                <button class="flex-1 py-2 px-4 bg-gray-100 rounded-full text-center">联系卖家</button>
+                <button class="flex-1 py-2 px-4 bg-red-500 text-white rounded-full text-center">立即购买</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 发布商品页面 -->
+    <div class="fixed inset-0 bg-white z-50" style="display: none;" id="publishPage">
+        <!-- 顶部导航 -->
+        <div class="fixed top-0 left-0 right-0 bg-white z-10">
+            <div class="flex items-center justify-between p-4">
+                <button class="text-gray-600 cancel-btn">取消</button>
+                <h2 class="text-lg font-medium">发布商品</h2>
+                <button class="text-red-500">发布</button>
+            </div>
+        </div>
+
+        <!-- 表单内容 -->
+        <div class="mt-16 p-4">
+            <!-- 图片上传 -->
+            <div class="grid grid-cols-4 gap-4">
+                <div class="aspect-square bg-gray-100 rounded-lg flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- 商品信息表单 -->
+            <div class="mt-6 space-y-4">
+                <div class="space-y-2">
+                    <label class="text-sm text-gray-600">商品标题</label>
+                    <input type="text" placeholder="请输入商品标题" class="w-full p-3 border rounded-lg">
+                </div>
+
+                <div class="space-y-2">
+                    <label class="text-sm text-gray-600">商品分类</label>
+                    <select class="w-full p-3 border rounded-lg bg-white">
+                        <option>数码产品</option>
+                        <option>服装</option>
+                        <option>家居</option>
+                        <option>图书</option>
+                    </select>
+                </div>
+
+                <div class="space-y-2">
+                    <label class="text-sm text-gray-600">价格</label>
+                    <div class="flex items-center">
+                        <span class="text-lg mr-2">¥</span>
+                        <input type="number" placeholder="0.00" class="flex-1 p-3 border rounded-lg">
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <label class="text-sm text-gray-600">商品描述</label>
+                    <textarea placeholder="请详细描述商品的成色、使用感受等" class="w-full p-3 border rounded-lg h-32"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部导航栏 -->
+    <div class="fixed bottom-0 w-full bg-white border-t">
+        <div class="flex justify-around py-2">
+            <button class="flex flex-col items-center" data-page="home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+                <span class="text-xs mt-1">首页</span>
+            </button>
+            <button class="flex flex-col items-center" data-page="publish">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                </svg>
+                <span class="text-xs mt-1">发布</span>
+            </button>
+            <button class="flex flex-col items-center" data-page="message">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                </svg>
+                <span class="text-xs mt-1">消息</span>
+            </button>
+            <button class="flex flex-col items-center" data-page="profile">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+                <span class="text-xs mt-1">我的</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- 消息页面 -->
+    <div class="fixed inset-0 bg-white z-50" style="display: none;" id="messagePage">
+        <!-- 顶部导航 -->
+        <div class="fixed top-0 left-0 right-0 bg-white z-10">
+            <div class="flex items-center p-4">
+                <h2 class="text-lg font-medium flex-1 text-center">消息</h2>
+            </div>
+        </div>
+
+        <!-- 消息列表 -->
+        <div class="mt-16 divide-y">
+            <!-- 系统通知 -->
+            <div class="p-4 bg-white flex items-center">
+                <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                    </svg>
+                </div>
+                <div class="ml-4 flex-1">
+                    <h3 class="font-medium">系统通知</h3>
+                    <p class="text-sm text-gray-500 mt-1">您的商品已发布成功</p>
+                </div>
+                <span class="text-xs text-gray-400">刚刚</span>
+            </div>
+
+            <!-- 聊天消息 -->
+            <div class="p-4 bg-white flex items-center">
+                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde" alt="用户头像" class="w-12 h-12 rounded-full">
+                <div class="ml-4 flex-1">
+                    <h3 class="font-medium">李四</h3>
+                    <p class="text-sm text-gray-500 mt-1">请问这个商品还在吗？</p>
+                </div>
+                <div class="text-right">
+                    <span class="text-xs text-gray-400">10:30</span>
+                    <div class="mt-1 w-5 h-5 bg-red-500 rounded-full text-white text-xs flex items-center justify-center">2</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 个人中心页面 -->
+    <div class="fixed inset-0 bg-white z-50" style="display: none;" id="profilePage">
+        <!-- 用户信息卡片 -->
+        <div class="bg-gradient-to-r from-purple-500 to-pink-500 p-6 pt-12">
+            <div class="flex items-center">
+                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde" alt="用户头像" class="w-20 h-20 rounded-full border-4 border-white">
+                <div class="ml-4 text-white">
+                    <h2 class="text-xl font-bold">张三</h2>
+                    <p class="mt-1 text-sm opacity-90">ID: 888888</p>
+                </div>
+                <button class="ml-auto bg-white/20 px-4 py-2 rounded-full text-white text-sm">
+                    编辑资料
+                </button>
+            </div>
+            
+            <!-- 数据统计 -->
+            <div class="mt-6 flex justify-around text-white">
+                <div class="text-center">
+                    <div class="text-xl font-bold">38</div>
+                    <div class="text-sm opacity-90">发布</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-xl font-bold">128</div>
+                    <div class="text-sm opacity-90">关注</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-xl font-bold">96</div>
+                    <div class="text-sm opacity-90">粉丝</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 功能菜单 -->
+        <div class="mt-4">
+            <div class="bg-white px-4">
+                <div class="py-4 flex items-center border-b">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                    <span class="ml-3">我的订单</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-auto text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </div>
+
+                <div class="py-4 flex items-center border-b">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                    <span class="ml-3">我的收藏</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-auto text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </div>
+
+                <div class="py-4 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span class="ml-3">我的钱包</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-auto text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="mt-4 bg-white px-4">
+                <div class="py-4 flex items-center border-b">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <span class="ml-3">设置</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-auto text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </div>
+
+                <div class="py-4 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span class="ml-3">帮助与反馈</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-auto text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 我的订单页面 -->
+    <div class="fixed inset-0 bg-white z-50" style="display: none;" id="orderPage">
+        <div class="fixed top-0 left-0 right-0 bg-white z-10">
+            <div class="flex items-center p-4">
+                <button class="p-2 back-btn-profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <h2 class="flex-1 text-center text-lg font-medium">我的订单</h2>
+            </div>
+        </div>
+
+        <!-- 订单状态切换 -->
+        <div class="mt-16 bg-white">
+            <div class="flex justify-around border-b">
+                <button class="py-3 px-4 text-red-500 border-b-2 border-red-500">全部</button>
+                <button class="py-3 px-4">待付款</button>
+                <button class="py-3 px-4">待发货</button>
+                <button class="py-3 px-4">待收货</button>
+            </div>
+        </div>
+
+        <!-- 订单列表 -->
+        <div class="mt-2">
+            <div class="bg-white p-4 mb-2">
+                <div class="flex justify-between items-center">
+                    <span class="text-sm text-gray-500">订单号：20240410001</span>
+                    <span class="text-red-500">待付款</span>
+                </div>
+                <div class="flex mt-3">
+                    <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105" alt="商品图片" class="w-20 h-20 object-cover rounded">
+                    <div class="ml-3 flex-1">
+                        <h3 class="font-medium">vintage连衣裙</h3>
+                        <p class="text-sm text-gray-500 mt-1">米色 | M码</p>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-red-500">¥199</span>
+                            <span class="text-sm text-gray-500">x1</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-end mt-3 space-x-3">
+                    <button class="px-4 py-2 border rounded-full text-sm">取消订单</button>
+                    <button class="px-4 py-2 bg-red-500 text-white rounded-full text-sm">立即付款</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 我的收藏页面 -->
+    <div class="fixed inset-0 bg-white z-50" style="display: none;" id="favoritePage">
+        <div class="fixed top-0 left-0 right-0 bg-white z-10">
+            <div class="flex items-center p-4">
+                <button class="p-2 back-btn-profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <h2 class="flex-1 text-center text-lg font-medium">我的收藏</h2>
+            </div>
+        </div>
+
+        <!-- 收藏列表 -->
+        <div class="mt-16 p-4 grid grid-cols-2 gap-4">
+            <div class="bg-white rounded-lg overflow-hidden shadow">
+                <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f" alt="商品图片" class="w-full h-32 object-cover">
+                <div class="p-3">
+                    <h3 class="text-sm font-medium">复古相机</h3>
+                    <p class="text-xs text-gray-500 mt-1">95新 | 带包装</p>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="text-red-500 font-medium">¥899</span>
+                        <button class="text-red-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 我的钱包页面 -->
+    <div class="fixed inset-0 bg-white z-50" style="display: none;" id="walletPage">
+        <div class="fixed top-0 left-0 right-0 bg-white z-10">
+            <div class="flex items-center p-4">
+                <button class="p-2 back-btn-profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <h2 class="flex-1 text-center text-lg font-medium">我的钱包</h2>
+            </div>
+        </div>
+
+        <!-- 钱包内容 -->
+        <div class="mt-16">
+            <div class="bg-gradient-to-r from-blue-500 to-purple-500 p-6">
+                <h3 class="text-white text-sm">账户余额</h3>
+                <p class="text-white text-3xl font-bold mt-2">¥1,234.56</p>
+                <div class="flex justify-between mt-4">
+                    <button class="bg-white/20 text-white px-6 py-2 rounded-full text-sm">充值</button>
+                    <button class="bg-white/20 text-white px-6 py-2 rounded-full text-sm">提现</button>
+                </div>
+            </div>
+
+            <!-- 交易记录 -->
+            <div class="mt-4">
+                <div class="px-4 py-3 bg-white">
+                    <h3 class="font-medium">交易记录</h3>
+                </div>
+                <div class="bg-white">
+                    <div class="p-4 border-b flex justify-between items-center">
+                        <div>
+                            <h4 class="font-medium">购买商品</h4>
+                            <p class="text-sm text-gray-500 mt-1">2024-04-10 10:30</p>
+                        </div>
+                        <span class="text-red-500">-¥199.00</span>
+                    </div>
+                    <div class="p-4 border-b flex justify-between items-center">
+                        <div>
+                            <h4 class="font-medium">余额充值</h4>
+                            <p class="text-sm text-gray-500 mt-1">2024-04-09 15:20</p>
+                        </div>
+                        <span class="text-green-500">+¥500.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 在</body>标签前添加JavaScript代码 -->
+    <script>
+        // 页面管理
+        const pages = {
+            home: document.querySelector('.mt-16.pb-16'),
+            productDetail: document.getElementById('productDetail'),
+            publishPage: document.getElementById('publishPage'),
+            messagePage: document.getElementById('messagePage'),
+            profilePage: document.getElementById('profilePage'),
+            orderPage: document.getElementById('orderPage'),
+            favoritePage: document.getElementById('favoritePage'),
+            walletPage: document.getElementById('walletPage')
+        };
+
+        // 修改底部导航按钮的选择器
+        const navButtons = {
+            home: document.querySelector('button[data-page="home"]'),
+            publish: document.querySelector('button[data-page="publish"]'),
+            message: document.querySelector('button[data-page="message"]'),
+            profile: document.querySelector('button[data-page="profile"]')
+        };
+
+        // 显示指定页面
+        function showPage(pageId) {
+            // 隐藏所有页面
+            Object.values(pages).forEach(page => {
+                if (page) page.style.display = 'none';
+            });
+            
+            // 显示目标页面
+            if (pages[pageId]) {
+                pages[pageId].style.display = 'block';
+            }
+            
+            // 更新底部导航状态
+            Object.values(navButtons).forEach(btn => {
+                if (btn) btn.classList.remove('text-red-500');
+            });
+            if (navButtons[pageId]) {
+                navButtons[pageId].classList.add('text-red-500');
+            }
+        }
+
+        // 绑定底部导航事件
+        if (navButtons.home) navButtons.home.addEventListener('click', () => showPage('home'));
+        if (navButtons.publish) navButtons.publish.addEventListener('click', () => showPage('publishPage'));
+        if (navButtons.message) navButtons.message.addEventListener('click', () => showPage('messagePage'));
+        if (navButtons.profile) navButtons.profile.addEventListener('click', () => showPage('profilePage'));
+
+        // 商品卡片点击事件
+        const productCards = document.querySelectorAll('.bg-white.rounded-lg');
+        productCards.forEach(card => {
+            card.addEventListener('click', () => showPage('productDetail'));
+        });
+
+        // 返回按钮事件
+        const backButtons = document.querySelectorAll('.back-btn');
+        backButtons.forEach(btn => {
+            btn.addEventListener('click', () => showPage('home'));
+        });
+
+        // 发布页面取消按钮
+        const publishCancelBtn = document.querySelector('#publishPage .cancel-btn');
+        if (publishCancelBtn) {
+            publishCancelBtn.addEventListener('click', () => showPage('home'));
+        }
+
+        // 图片上传功能
+        const imageUploader = document.querySelector('.aspect-square.bg-gray-100');
+        if (imageUploader) {
+            imageUploader.addEventListener('click', () => {
+                const input = document.createElement('input');
+                input.type = 'file';
+                input.accept = 'image/*';
+                input.onchange = (e) => {
+                    const file = e.target.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = (e) => {
+                            const img = document.createElement('img');
+                            img.src = e.target.result;
+                            img.className = 'w-full h-full object-cover rounded-lg';
+                            imageUploader.innerHTML = '';
+                            imageUploader.appendChild(img);
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                };
+                input.click();
+            });
+        }
+
+        // 收藏按钮功能
+        const favoriteButtons = document.querySelectorAll('button:has(path[d*="M4.318 6.318"])');
+        favoriteButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const path = btn.querySelector('path');
+                if (path.getAttribute('fill') === 'none') {
+                    path.setAttribute('fill', 'currentColor');
+                    btn.classList.add('text-red-500');
+                } else {
+                    path.setAttribute('fill', 'none');
+                    btn.classList.remove('text-red-500');
+                }
+            });
+        });
+
+        // 绑定个人中心菜单点击事件
+        document.querySelector('div.py-4:has(svg.text-blue-500)').addEventListener('click', () => showPage('orderPage'));
+        document.querySelector('div.py-4:has(svg.text-red-500)').addEventListener('click', () => showPage('favoritePage'));
+        document.querySelector('div.py-4:has(svg.text-green-500)').addEventListener('click', () => showPage('walletPage'));
+
+        // 绑定返回按钮事件
+        document.querySelectorAll('.back-btn-profile').forEach(btn => {
+            btn.addEventListener('click', () => showPage('profilePage'));
+        });
+
+        // 初始化显示首页
+        showPage('home');
+    </script>
+</body>
+</html> 
